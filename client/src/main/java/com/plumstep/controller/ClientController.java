@@ -14,4 +14,11 @@ public class ClientController {
     ResponseEntity<?> getMessage() {
 	return ResponseEntity.ok("Client successfully called!");
     }
+
+
+    @ApiOperation(value = "healthcheck")
+    @RequestMapping(value = "/healthcheck", method = RequestMethod.GET)
+    ResponseEntity<?> haelthCheck() {
+        return ResponseEntity.ok("server is health");
+    }
 }
