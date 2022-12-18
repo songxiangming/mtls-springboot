@@ -7,11 +7,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("client")
-public class ClientController {
-    @ApiOperation(value = "Return text message to show off successful call")
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    ResponseEntity<?> getMessage() {
-        return ResponseEntity.ok("Client successfully called!");
+@RequestMapping("")
+public class StandardController {
+
+
+    @ApiOperation(value = "healthcheck")
+    @RequestMapping(value = "/healthcheck", method = RequestMethod.GET)
+    static ResponseEntity<?> healthCheck() {
+        return ResponseEntity.ok("server is health");
     }
 }
