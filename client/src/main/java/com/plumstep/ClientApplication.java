@@ -43,6 +43,8 @@ public class ClientApplication {
 
     @Bean
     public Docket api() {
+
+        System.out.println("enter api ctor");
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.any())
